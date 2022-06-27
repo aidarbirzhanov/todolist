@@ -13,20 +13,22 @@ function addTodo(event) {
 
   const newTodo = document.createElement('li');
   newTodo.innerText = todoInput.value;
-  newTodo.classList.add('todo-item');
-  todoDiv.appendChild(newTodo);
+  if (todoInput.value.length > 0){
+    newTodo.classList.add('todo-item');
+    todoDiv.appendChild(newTodo);
 
-  const completedButton = document.createElement('button');
-  completedButton.innerHTML = '<i class = "fas fa-check"></i>';
-  completedButton.classList.add('complete-btn');
-  todoDiv.appendChild(completedButton);
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<i class = "fas fa-check"></i>';
+    completedButton.classList.add('complete-btn');
+    todoDiv.appendChild(completedButton);
 
-  const trashButton = document.createElement('button');
-  trashButton.innerHTML = '<i class = "fas fa-trash"></i>';
-  trashButton.classList.add('trash-btn');
-  todoDiv.appendChild(trashButton);
-  todoList.appendChild(todoDiv);
-  todoInput.value = "";
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML = '<i class = "fas fa-trash"></i>';
+    trashButton.classList.add('trash-btn');
+    todoDiv.appendChild(trashButton);
+    todoList.appendChild(todoDiv);
+    todoInput.value = "";
+  }
 }
 
 function deleteCheck(e){
